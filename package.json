@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "express": "^5.1.0",
     "lodash": "^4.17.21",
     "lowdb": "^7.0.1",
-    "nanoid": "^5.1.5"
+    "nanoid": "^5.1.5",
+    "ws": "^8.18.1"
   }
 }
