@@ -1,6 +1,9 @@
 const bcrypt = require("bcryptjs");
 const { Low } = require("lowdb");
 const { JSONFile } = require("lowdb/node");
+const jwt = require("jsonwebtoken");
+
+const SECRET_KEY = "your-secret-key";
 
 const adapter = new JSONFile("auth-db.json");
 const db = new Low(adapter, { users: [] });
@@ -27,7 +30,10 @@ async function findingUser(req, res) {
   );
 
   if (isPasswordCorrect) {
-    return res.status(200).json({ message: "Авторизация успешна" });
+    const token = jwt.sign({ username: existingUser.username }, SECRET_KEY, {
+      expiresIn: "2h",
+    });
+    return res.status(200).json({ message: "Авторизация успешна", token });
   } else {
     return res.status(400).json({ error: "Неверные логин или пароль" });
   }
