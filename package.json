@@ -13,8 +13,10 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "lowdb": "^7.0.1",
     "nanoid": "^5.1.5",

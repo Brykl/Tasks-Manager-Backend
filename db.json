@@ -1,11 +1,3 @@
 {
-  "notes": [
-    {
-      "id": "f4226ce0-691e-43e7-b140-0c0db2dc37d2",
-      "title": "test",
-      "description": "test",
-      "deadline": "2025-04-30",
-      "status": "in-progress"
-    }
-  ]
+  "notes": []
 }
