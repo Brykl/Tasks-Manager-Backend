@@ -1,32 +1,11 @@
 {
   "notes": [
     {
-      "id": "3918f6ab-0fae-465f-b692-d1e721bd6b99",
-      "title": "What is Lorem Ipsum?",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "deadline": "2025-05-01",
-      "status": "completed"
-    },
-    {
-      "id": "7f1ab78c-0ac2-4dbf-8ee9-d7f911f41cd0",
+      "id": "f4226ce0-691e-43e7-b140-0c0db2dc37d2",
       "title": "test",
       "description": "test",
-      "deadline": "2025-04-03",
-      "status": "completed"
-    },
-    {
-      "id": "54dc2240-a1dd-4051-97bc-75ee84fa08b3",
-      "title": "1",
-      "description": "1",
-      "deadline": "2025-04-29",
-      "status": "completed"
-    },
-    {
-      "id": "54dc2240-a1dd-4051-97bc-75ee84fa08b3",
-      "title": "1",
-      "description": "1",
-      "deadline": "2025-04-29",
-      "status": "pending"
+      "deadline": "2025-04-30",
+      "status": "in-progress"
     }
   ]
 }

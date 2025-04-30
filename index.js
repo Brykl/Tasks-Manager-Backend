@@ -30,7 +30,7 @@ async function startServer() {
 
   app.post("/notes", async (req, res) => {
     const newNote = { id: nanoid(), ...req.body };
-    db.data.notes.push(newNote);
+    db.data.notes.unshift(newNote);
     await db.write();
     res.status(201).json(newNote);
   });
