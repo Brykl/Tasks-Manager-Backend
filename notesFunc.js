@@ -16,30 +16,29 @@ async function getNotes(req, res) {
 }
 
 async function createNote(req, res) {
-  await initDb(); // Убедитесь, что база данных загружена перед добавлением
+  await initDb();
   const newNote = { id: nanoid(), ...req.body };
   db.data.notes.unshift(newNote);
-  await db.write(); // Асинхронная запись
+  await db.write();
   res.status(201).json(newNote);
 }
 
 async function deleteNote(req, res) {
-  await initDb(); // Убедитесь, что база данных загружена перед удалением
+  await initDb();
   db.data.notes = db.data.notes.filter((n) => n.id !== req.params.id);
-  await db.write(); // Асинхронная запись
+  await db.write();
   res.status(204).send();
 }
 
 async function updateNote(req, res) {
-  await initDb(); // Убедитесь, что база данных загружена перед обновлением
+  await initDb();
   const noteIndex = db.data.notes.findIndex((n) => n.id === req.params.id);
   if (noteIndex === -1) {
     return res.status(404).json({ error: "Заметка не найдена" });
   }
 
-  // Обновление заметки
   db.data.notes[noteIndex] = { ...db.data.notes[noteIndex], ...req.body };
-  await db.write(); // Асинхронная запись
+  await db.write();
   res.json(db.data.notes[noteIndex]);
 }
 
