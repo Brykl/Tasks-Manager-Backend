@@ -43,8 +43,9 @@ async function createNote(req, res) {
   const token = authHeader.split(" ")[1];
   const decoded = jwt.verify(token, SECRET_KEY);
   console.log(decoded);
-  const ownerId = getAccessFree(userName, decoded);
-  const newNote = { id: nanoid(), ...req.body, ownerId };
+  const ownerId = await getAccessFree(userName, decoded);
+  console.log("getAccessFree: " + getAccessFree(userName, decoded));
+  const newNote = { id: nanoid(), ...req.body, ownerId: ownerId };
   db.data.notes.unshift(newNote);
   await db.write();
   res.status(201).json(newNote);
