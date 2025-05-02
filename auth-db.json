@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "id": "1746175923144",
+      "id": "1746183833922",
       "username": "egor",
-      "password": "$2b$10$pwwc6oTSxM1imswy2eFPOegytd7fV3MEcg9rC/gC4JWkloGnPbC9C",
-      "accessTo": ["1746175923144"]
+      "password": "$2b$10$l52lOUlkNTx1FYJmjWGTN.53AjQaydP/lERIqVUOl1x8MbIuWMcN2",
+      "accessTo": ["1746183833922"]
     },
     {
-      "id": "1746177788768",
-      "username": "user",
-      "password": "$2b$10$/tiFTm.bkZN1sp0kfuqrOOUg9xv82AxeOHzdKqwgPHTINWTxEWFTa",
-      "accessTo": ["1746177788768"]
-    },
-    {
-      "id": "1746178505024",
-      "username": "1231",
-      "password": "$2b$10$drf76W67OnwvtTrudwbuH.MsrtgvYT9cSS6lJQW62eRGZdw5aiUwW",
-      "accessTo": ["1746178505024", "1746177788768"]
+      "id": "1746185450694",
+      "username": "test",
+      "password": "$2b$10$kHB3nq55bWsFAfPrzTJMWuMBMQSFS9oUHBy6htqlAprvEcQUJD8Su",
+      "accessTo": ["1746185450694"]
     }
   ]
 }
