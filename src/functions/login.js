@@ -13,9 +13,14 @@ async function findingUser(req, res) {
     return res.status(400).json({ error: "Неверные логин или пароль" });
   }
 
-  if (password === existingUser.password) {
+  const isPasswordCorrect = await bcrypt.compare(
+    password,
+    existingUser.password
+  );
+
+  if (isPasswordCorrect) {
     const token = jwt.sign(
-      { userId: existingUser.id, username: existingUser.username },
+      { id: existingUser.id, username: existingUser.username },
       SECRET_KEY,
       {
         expiresIn: "2h",

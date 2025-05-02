@@ -1,13 +1,12 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-
-const router = express.Router();
+const findingUsername = require("../functions/findAccessTo");
+const routerProfile = express.Router();
 const SECRET_KEY = "your-secret-key";
 
-router.get("/:userName", (req, res) => {
+routerProfile.get("/:userName", async (req, res) => {
   const { userName } = req.params;
-  const token = req.query.token;
-
+  const token = req.headers.authorization?.split(" ")[1];
   if (!token) {
     return res.status(400).json({ error: "Токен не найден" });
   }
@@ -16,10 +15,12 @@ router.get("/:userName", (req, res) => {
     const decoded = jwt.verify(token, SECRET_KEY);
 
     if (decoded.username === userName) {
+      const accessTo = await findingUsername(userName);
       return res.status(200).json({
         message: "Профиль найден",
         username: decoded.username,
         userId: decoded.userId,
+        accessTo: accessTo,
       });
     } else {
       return res
@@ -31,4 +32,4 @@ router.get("/:userName", (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = routerProfile;

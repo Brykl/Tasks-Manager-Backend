@@ -1,9 +1,16 @@
 {
   "users": [
     {
-      "id": "1746168806073",
+      "id": "1746183833922",
       "username": "egor",
-      "password": "$2b$10$pR4vrQCzp9Feie0LC3Q5leY2wHNKLx3LuXg8PcB/I773eHT6HwdFq"
+      "password": "$2b$10$l52lOUlkNTx1FYJmjWGTN.53AjQaydP/lERIqVUOl1x8MbIuWMcN2",
+      "accessTo": ["1746183833922"]
+    },
+    {
+      "id": "1746185450694",
+      "username": "test",
+      "password": "$2b$10$kHB3nq55bWsFAfPrzTJMWuMBMQSFS9oUHBy6htqlAprvEcQUJD8Su",
+      "accessTo": ["1746185450694"]
     }
   ]
 }

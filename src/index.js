@@ -18,7 +18,7 @@ startNotesRoutes(app);
 app.post("/register", registerUser);
 app.post("/login", findingUser);
 
-app.use("/profile", routerProfile);
+app.use("/user", routerProfile);
 
 server.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
