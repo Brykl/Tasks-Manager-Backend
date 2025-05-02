@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const http = require("http");
-const { startNotesRoutes } = require("./notesFunc");
-const registerUser = require("./registration");
-const findingUser = require("./login");
+const { startNotesRoutes } = require("./components/notesFunc");
+const registerUser = require("./functions/registration");
+const findingUser = require("./functions/login");
 
 const app = express();
 app.use(cors());
