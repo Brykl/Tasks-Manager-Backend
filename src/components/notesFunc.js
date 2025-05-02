@@ -1,6 +1,7 @@
 const { Low } = require("lowdb");
 const { JSONFile } = require("lowdb/node");
 const { nanoid } = require("nanoid");
+const jwt = require("jsonwebtoken");
 
 const adapter = new JSONFile("db.json");
 const db = new Low(adapter, { notes: [] });

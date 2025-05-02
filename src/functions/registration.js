@@ -34,11 +34,12 @@ async function registerUser(req, res) {
       .json({ error: "Длинна имени пользователя должна быть больше 4" });
   }
   const hashedPassword = await bcrypt.hash(password, 10);
-
+  const id = Date.now().toString();
   const newUser = {
-    id: Date.now().toString(),
+    id,
     username,
     password: hashedPassword,
+    accessTo: [id],
   };
   db.data.users.push(newUser);
   db.write();

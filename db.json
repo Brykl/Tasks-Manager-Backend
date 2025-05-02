@@ -1,3 +1,20 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "id": "f18f5b3b-f89c-454f-88f3-b03a77107589",
+      "title": "Заголовок",
+      "description": "Текст",
+      "deadline": "2025-05-02",
+      "status": "pending",
+      "ownerId": "1746175923144"
+    },
+    {
+      "id": "f18f5b3b-f89c-454f-88f3-b03a77107511",
+      "title": "Заголовок 2",
+      "description": "Текст2",
+      "deadline": "2025-05-02",
+      "status": "pending",
+      "ownerId": "1746175923144"
+    }
+  ]
 }
