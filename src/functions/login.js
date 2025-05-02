@@ -30,9 +30,13 @@ async function findingUser(req, res) {
   );
 
   if (isPasswordCorrect) {
-    const token = jwt.sign({ username: existingUser.username }, SECRET_KEY, {
-      expiresIn: "2h",
-    });
+    const token = jwt.sign(
+      { id: existingUser.id, username: existingUser.username },
+      SECRET_KEY,
+      {
+        expiresIn: "2h",
+      }
+    );
     return res.status(200).json({ message: "Авторизация успешна", token });
   } else {
     return res.status(400).json({ error: "Неверные логин или пароль" });

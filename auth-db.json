@@ -1,19 +1,9 @@
 {
   "users": [
     {
-      "id": "1746013077156",
+      "id": "1746169161548",
       "username": "egor",
-      "password": "$2b$10$9ghpcMfhtT.aqdojM/uw/OQdrCg3kkkXuP3MESbWUuoYIX2GZqTD6"
-    },
-    {
-      "id": "1746159733544",
-      "username": "trend",
-      "password": "$2b$10$yj.ponsiLIoKIy1L5mjyE.yDyvZN1DVvTwIdP9ud011uHHKqFc/zG"
-    },
-    {
-      "id": "1746160009780",
-      "username": "1111",
-      "password": "$2b$10$q1qndflqbOp1epZkkz2uB.SkT2tL.hj0/A/3G0z0VQCzcZFWdRtXu"
+      "password": "$2b$10$6DSUIHljFl7uk/dgsG0YbuottggfcumERhuEzJEGSN7DZMTA3Ekaa"
     }
   ]
 }
