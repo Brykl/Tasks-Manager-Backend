@@ -34,16 +34,13 @@ async function getNotes(req, res) {
 }
 
 async function createNote(req, res) {
+  await initDb();
   const { userName } = req.params;
   const authHeader = req.headers.authorization;
-
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ error: "Отсутствует токен авторизации" });
   }
-
   const token = authHeader.split(" ")[1];
-
-  await initDb();
   const decoded = jwt.verify(token, SECRET_KEY);
   console.log(decoded);
   const ownerId = getAccessFree(userName, decoded);
@@ -74,7 +71,7 @@ async function updateNote(req, res) {
 
 function startNotesRoutes(app) {
   app.get("/user/:userName/notes", getNotes);
-  app.post("/notes", createNote);
+  app.post("/user/:userName/notes", createNote);
   app.delete("/notes/:id", deleteNote);
   app.put("/notes/:id", updateNote);
 }
