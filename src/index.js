@@ -6,6 +6,9 @@ const registerUser = require("./functions/registration");
 const findingUser = require("./functions/login");
 const routerProfile = require("./routes/profile");
 const authMiddleware = require("./functions/checkingToken");
+const getAllAccess = require("./functions/getAllAccess");
+const updateUserAccess = require("./functions/updateAccessList");
+const router = express.Router();
 
 const app = express();
 app.use(cors());
@@ -21,6 +24,9 @@ app.post("/login", findingUser);
 app.get("/checkToken", authMiddleware, (req, res) => {
   res.json({ success: true, user: req.user });
 });
+app.get("/access-list", authMiddleware, getAllAccess);
+
+app.put("/user/update-access/:userId", authMiddleware, updateUserAccess);
 
 app.use("/user", routerProfile);
 

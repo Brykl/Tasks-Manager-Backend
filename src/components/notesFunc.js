@@ -4,6 +4,7 @@ const { nanoid } = require("nanoid");
 const jwt = require("jsonwebtoken");
 const getCards = require("../functions/getCards");
 const getAccessFree = require("../functions/getAcceess");
+const authMiddleware = require("../functions/checkingToken");
 
 const SECRET_KEY = "your-secret-key";
 

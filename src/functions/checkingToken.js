@@ -9,8 +9,6 @@ function authMiddleware(req, res, next) {
   }
 
   const token = authHeader.split(" ")[1];
-  console.log(token);
-  console.log("Headers:", req.headers);
 
   try {
     const decoded = jwt.verify(token, SECRET_KEY);

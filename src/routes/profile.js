@@ -16,7 +16,6 @@ routerProfile.get("/:userName", async (req, res) => {
 
     if (decoded.username === userName) {
       const accessTo = await findingUsername(userName);
-      console.log(decoded.userId);
       return res.status(200).json({
         message: "Профиль найден",
         username: decoded.username,
