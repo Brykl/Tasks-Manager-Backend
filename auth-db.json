@@ -4,31 +4,44 @@
       "id": "1746183833922",
       "username": "egor",
       "password": "$2b$10$l52lOUlkNTx1FYJmjWGTN.53AjQaydP/lERIqVUOl1x8MbIuWMcN2",
-      "accessTo": ["1746183833922", "1746420417737"]
+      "accessTo": [
+        "1746183833922",
+        "1746420417737"
+      ]
     },
     {
       "id": "1746185450694",
       "username": "test",
       "password": "$2b$10$kHB3nq55bWsFAfPrzTJMWuMBMQSFS9oUHBy6htqlAprvEcQUJD8Su",
-      "accessTo": ["1746185450694", "1746420417737"]
+      "accessTo": [
+        "1746185450694",
+        "1746420417737"
+      ]
     },
     {
       "id": "1746420417737",
       "username": "admin",
       "password": "$2b$10$KD9HhwEKC8KA6ievLqefZeP.iEZOgdurreTBW/jkluntG8d2zxW.W",
-      "accessTo": ["1746420417737"]
+      "accessTo": [
+        "1746420417737"
+      ]
     },
     {
       "id": "1746424308516",
       "username": "1111",
       "password": "$2b$10$xClRF0XGuWYycjEmv8yO3.YOvfFiQ/ELSyf/ZuTGbnJ98jGPAGBR2",
-      "accessTo": ["1746424308516"]
+      "accessTo": [
+        "1746424308516"
+      ]
     },
     {
       "id": "1746446603792",
       "username": "mary",
       "password": "$2b$10$0KoJfTM5mT/2n7HufJbKbOpN3Bd70MpTkhcvPdkqrP.pdGHJ9akAW",
-      "accessTo": ["egor"]
+      "accessTo": [
+        "1746446603792",
+        "1746183833922"
+      ]
     }
   ]
 }

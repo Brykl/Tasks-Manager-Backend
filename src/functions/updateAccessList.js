@@ -12,8 +12,8 @@ async function initDb() {
 async function updateUserAccess(req, res) {
   await initDb();
 
-  const { username } = req.user;
-  const { accessTo } = req.body;
+  const { username } = req.user; // Текущий пользователь
+  const { accessTo } = req.body; // Новый список пользователей для доступа
 
   const user = db.data.users.find((user) => user.username === username);
 
@@ -26,14 +26,21 @@ async function updateUserAccess(req, res) {
     user.accessTo = [];
   }
 
-  // Пушим id пользователя в accessTo, если его еще нет
+  // Пушим id текущего пользователя в accessTo, если его еще нет
   if (!user.accessTo.includes(user.id)) {
     user.accessTo.push(user.id);
   }
 
-  // Пушим новый ID в список accessTo, если его еще нет
-  if (accessTo && !user.accessTo.includes(accessTo)) {
-    user.accessTo.push(accessTo);
+  // Преобразуем имена пользователей из списка accessTo в их ID
+  if (accessTo && Array.isArray(accessTo)) {
+    accessTo.forEach((username) => {
+      const targetUser = db.data.users.find(
+        (user) => user.username === username
+      );
+      if (targetUser && !user.accessTo.includes(targetUser.id)) {
+        user.accessTo.push(targetUser.id);
+      }
+    });
   }
 
   await db.write();
