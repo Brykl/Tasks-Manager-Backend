@@ -8,6 +8,7 @@ const routerProfile = require("./routes/profile");
 const authMiddleware = require("./functions/checkingToken");
 const getAllAccess = require("./functions/getAllAccess");
 const updateUserAccess = require("./functions/updateAccessList");
+const deleteUserAccess = require("./functions/deleteAccess");
 const router = express.Router();
 
 const app = express();
@@ -25,6 +26,7 @@ app.get("/checkToken", authMiddleware, (req, res) => {
   res.json({ success: true, user: req.user });
 });
 app.get("/access-list", authMiddleware, getAllAccess);
+app.put("/delete-access", deleteUserAccess);
 
 app.put("/user/update-access/:userId", authMiddleware, updateUserAccess);
 
