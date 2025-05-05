@@ -12,8 +12,9 @@ async function initDb() {
 async function updateUserAccess(req, res) {
   await initDb();
 
-  const { username } = req.user; // Текущий пользователь
-  const { accessTo } = req.body; // Новый список пользователей для доступа
+  const { username } = req.user; 
+  const { accessTo } = req.body; 
+  console.log(accessTo);
 
   const user = db.data.users.find((user) => user.username === username);
 
@@ -21,27 +22,32 @@ async function updateUserAccess(req, res) {
     return res.status(404).json({ error: "Пользователь не найден" });
   }
 
-  // Если нет accessTo, создаем его как пустой массив
-  if (!user.accessTo) {
-    user.accessTo = [];
-  }
 
-  // Пушим id текущего пользователя в accessTo, если его еще нет
-  if (!user.accessTo.includes(user.id)) {
-    user.accessTo.push(user.id);
-  }
 
-  // Преобразуем имена пользователей из списка accessTo в их ID
-  if (accessTo && Array.isArray(accessTo)) {
-    accessTo.forEach((username) => {
-      const targetUser = db.data.users.find(
-        (user) => user.username === username
-      );
-      if (targetUser && !user.accessTo.includes(targetUser.id)) {
-        user.accessTo.push(targetUser.id);
-      }
-    });
-  }
+
+    user.accessTo = []
+
+
+
+    console.log(accessTo)
+
+    if (accessTo) {
+      const newAccessIds = accessTo
+    .map((targetUsername) => {
+      const targetUser = db.data.users.find((u) => u.username === targetUsername);
+      return targetUser?.id;
+    })
+    .filter(Boolean);
+    user.accessTo = [user.id, ...newAccessIds];
+    } 
+    if(!accessTo) {
+      user.accessTo = []
+      user.accessTo.push(user.id);
+    }
+
+    console.log("user.accessTo: " + user.accessTo)
+ 
+
 
   await db.write();
 
