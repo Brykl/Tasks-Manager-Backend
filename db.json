@@ -1,3 +1,36 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "id": "NUxj-ZMkPqgNAjHvcSd5j",
+      "title": "вфыв",
+      "description": "1123",
+      "deadline": "2025-05-05",
+      "status": "in-progress",
+      "ownerId": "1746420417737"
+    },
+    {
+      "id": "i0H0rtNPxVHiwtY0T1gV0",
+      "title": "Маша Маша Маша ",
+      "description": "фывфывфыв",
+      "deadline": "2025-06-06",
+      "status": "pending",
+      "ownerId": "1746462697908"
+    },
+    {
+      "id": "833Kef-5tp0hzwGzQP748",
+      "title": "admin заметка",
+      "description": "1",
+      "deadline": "2025-05-05",
+      "status": "pending",
+      "ownerId": "1746420417737"
+    },
+    {
+      "id": "6BYSBa_AJzNWVEsB-WO4J",
+      "title": "Заголовок 2",
+      "description": "Текст2",
+      "deadline": "2025-05-02",
+      "status": "pending",
+      "ownerId": "1746183833922"
+    }
+  ]
 }
