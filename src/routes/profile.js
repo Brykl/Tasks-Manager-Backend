@@ -12,10 +12,11 @@ routerProfile.get("/:userName", async (req, res) => {
   }
 
   try {
-    const decoded = jwt.verify(token, SECRET_KEY);
+    const decoded = await jwt.verify(token, SECRET_KEY);
 
     if (decoded.username === userName) {
       const accessTo = await findingUsername(userName);
+      console.log(decoded.userId);
       return res.status(200).json({
         message: "Профиль найден",
         username: decoded.username,

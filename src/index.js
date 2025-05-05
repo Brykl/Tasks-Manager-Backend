@@ -5,6 +5,7 @@ const { startNotesRoutes } = require("./components/notesFunc");
 const registerUser = require("./functions/registration");
 const findingUser = require("./functions/login");
 const routerProfile = require("./routes/profile");
+const authMiddleware = require("./functions/checkingToken");
 
 const app = express();
 app.use(cors());
@@ -17,6 +18,9 @@ startNotesRoutes(app);
 
 app.post("/register", registerUser);
 app.post("/login", findingUser);
+app.get("/checkToken", authMiddleware, (req, res) => {
+  res.json({ success: true, user: req.user });
+});
 
 app.use("/user", routerProfile);
 

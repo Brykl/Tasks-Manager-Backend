@@ -25,7 +25,7 @@ function startNotesRoutes(app) {
   });
 
   app.post("/notes", authMiddleware, (req, res) => {
-    req.body.username = req.user.username; // Присваиваем автора заметке
+    req.body.username = req.user.username;
     createNote(req, res);
   });
 

@@ -21,7 +21,10 @@ async function findingUsername(userName) {
   }
 
   if (existingUser) {
-    return existingUser.accessTo;
+    const resultAccessTo = db.data.users
+      .filter((user) => user.accessTo.includes(existingUser.id))
+      .map((user) => user.username);
+    return resultAccessTo;
   } else {
     return "Error при получении доступа к базе данных";
   }
